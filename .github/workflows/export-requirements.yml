@@ -55,7 +55,7 @@ jobs:
 
           ## If there are no changes, this keeps the workflow from failing
           if [[ -n $(git status -s) ]]; then
-            git add requirements.txt requirements.dev.txt requirements.ci.txt
+            git add requirements.txt requirements.dev.txt
             git commit -m "Auto-export requirements files"
             git push
           else

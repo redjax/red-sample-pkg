@@ -43,8 +43,8 @@ jobs:
 
           ## If there are no changes, this keeps the workflow from failing
           if [[ -n $(git status -s) ]]; then
-            git add requirements.txt requirements.dev.txt
-            git commit -m "Auto-export requirements files"
+            git add *
+            git commit -m "Add linted, formatted files"
             git push
           else
             echo "No changes to commit."
