@@ -43,10 +43,10 @@ jobs:
           pdm export -d -o requirements.dev.txt --without-hashes
           cat requirements.dev.txt
 
-      - name: Export requirements.ci.txt
-        run: |
-          pdm export -d -o requirements.ci.txt --without-hashes
-          cat requirements.ci.txt
+      # - name: Export requirements.ci.txt
+      #   run: |
+      #     pdm export -d -o requirements.ci.txt --without-hashes
+      #     cat requirements.ci.txt
 
       - name: Commit & push changes
         run: |

@@ -2,10 +2,10 @@
 # It is not intended for manual editing.
 
 [metadata]
-groups = ["default", "dev", "ci.lint"]
+groups = ["default", "dev", "ci.lint", "ci"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:14e1a786ebde401d3159d2ce4d553715d57e79303ee05cfd1e69bad060c6bf89"
+content_hash = "sha256:1585ec5f450d84dec5ecf445588a55fed671d5d95b0cf286f1d5c50d4681cffd"
 
 [[package]]
 name = "aiohttp"

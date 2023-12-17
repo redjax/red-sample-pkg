@@ -16,8 +16,6 @@ requires-python = ">=3.11"
 readme = "README.md"
 license = { text = "MIT" }
 
-[project.optional-dependencies]
-"ci.lint" = ["ruff>=0.1.8", "black>=23.12.0"]
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
@@ -51,4 +49,4 @@ export = { cmd = "pdm export --prod -o requirements.txt --without-hashes" }
 #  Export only development requirements
 export-dev = { cmd = "pdm export -d -o requirements.dev.txt --without-hashes" }
 ## Uncomment if/when using a CI group
-export-ci = { cmd = "pdm export -G ci.lint -o requirements.ci.txt --without-hashes" }
+export-ci = { cmd = "pdm export --group ci -o requirements.ci.txt --without-hashes" }
