@@ -2,9 +2,9 @@
 name: Run lint & format PDM Scripts
 
 on:
-  # push:
-  #   branches:
-  #     - dev
+  push:
+    branches:
+      - dev
   #     - ci
   pull_request:
     branches:
@@ -29,7 +29,7 @@ jobs:
       - name: Install PDM & dependencies
         run: |
           python -m pip install pdm
-          pdm install -G ci.lint --no-lock
+          pdm install -d --no-lock
           pdm --version
 
       - name: Run PDM Scripts
@@ -43,8 +43,8 @@ jobs:
 
           ## If there are no changes, this keeps the workflow from failing
           if [[ -n $(git status -s) ]]; then
-            git add requirements.txt requirements.dev.txt requirements.ci.txt
-            git commit -m "Auto-export requirements files"
+            git add *
+            git commit -m "Add linted, formatted files"
             git push
           else
             echo "No changes to commit."

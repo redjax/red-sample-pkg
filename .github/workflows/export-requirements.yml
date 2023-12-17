@@ -2,9 +2,9 @@
 name: Export project requirements.txt file(s)
 
 on:
-  # push:
-  #   branches:
-  #     - dev
+  push:
+    branches:
+      - dev
   #     - ci
   pull_request:
     branches:
@@ -43,10 +43,10 @@ jobs:
           pdm export -d -o requirements.dev.txt --without-hashes
           cat requirements.dev.txt
 
-      - name: Export requirements.ci.txt
-        run: |
-          pdm export -d -o requirements.ci.txt --without-hashes
-          cat requirements.ci.txt
+      # - name: Export requirements.ci.txt
+      #   run: |
+      #     pdm export -d -o requirements.ci.txt --without-hashes
+      #     cat requirements.ci.txt
 
       - name: Commit & push changes
         run: |
@@ -55,7 +55,7 @@ jobs:
 
           ## If there are no changes, this keeps the workflow from failing
           if [[ -n $(git status -s) ]]; then
-            git add requirements.txt requirements.dev.txt requirements.ci.txt
+            git add requirements.txt requirements.dev.txt
             git commit -m "Auto-export requirements files"
             git push
           else
