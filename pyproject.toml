@@ -2,9 +2,7 @@
 name = "red-sample-pkg"
 version = "0.1.0"
 description = "A sample Python package, for testing automations & project structures. Don't install/use this, please, no effort at all was put into making this useful/secure."
-authors = [
-    {name = "redjax", email = "stupidjunkstuff@protonmail.com"},
-]
+authors = [{ name = "redjax", email = "stupidjunkstuff@protonmail.com" }]
 dependencies = [
     "red-utils>=0.2.12",
     "pydantic>=2.5.2",
@@ -16,15 +14,41 @@ dependencies = [
 ]
 requires-python = ">=3.11"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
+[project.optional-dependencies]
+"ci.lint" = ["ruff>=0.1.8", "black>=23.12.0"]
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "black>=23.11.0",
-    "ruff>=0.1.7",
-    "pre-commit>=3.6.0",
-]
+dev = ["black>=23.11.0", "ruff>=0.1.7", "pre-commit>=3.6.0"]
+
+[tool.pdm.scripts]
+
+###############
+# Format/Lint #
+###############
+
+lint = { shell = "pdm run black . && pdm run ruff check . --fix" }
+check = { cmd = "black ." }
+format = { cmd = "ruff check . --fix" }
+
+########################
+# Start/Launch Scripts #
+########################
+
+#  Run main app or script. Launches from app/
+start = { shell = "cd src && pdm run python sample_pkg" }
+
+######################
+# Export Requirement #
+######################
+
+#  Export production requirements
+export = { cmd = "pdm export --prod -o requirements.txt --without-hashes" }
+#  Export only development requirements
+export-dev = { cmd = "pdm export -d -o requirements.dev.txt --without-hashes" }
+## Uncomment if/when using a CI group
+export-ci = { cmd = "pdm export -G ci -o requirements.ci.txt --without-hashes" }
