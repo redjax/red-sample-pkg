@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from core import app_settings, db_settings
 
-
 def say_hello() -> str:
     return "Hello, world!"
 

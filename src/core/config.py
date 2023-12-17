@@ -1,8 +1,8 @@
-from pydantic import Field, field_validator, ValidationError
+from __future__ import annotations
+
+from config import database_settings, settings
+from pydantic import Field, ValidationError, field_validator
 from pydantic_settings import BaseSettings
-
-from config import settings, database_settings
-
 
 class AppSettings(BaseSettings):
     env: str = Field(default=settings.ENV, env="ENV")
