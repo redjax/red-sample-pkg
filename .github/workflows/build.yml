@@ -2,9 +2,9 @@
 name: Build project with PDM
 
 on:
-  push:
-    branches:
-      - release
+  # push:
+  #   branches:
+  #     - release
   pull_request:
     branches:
       - release
