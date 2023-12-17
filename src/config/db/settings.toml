@@ -1,0 +1,8 @@
+[default]
+
+type = "sqlite"
+host = ".db/test.sqlite"
+
+[dev]
+
+[prod]

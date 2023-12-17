@@ -5,7 +5,7 @@
 groups = ["default", "dev", "ci.lint", "ci"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:1585ec5f450d84dec5ecf445588a55fed671d5d95b0cf286f1d5c50d4681cffd"
+content_hash = "sha256:fa54d259a33dec1339ef39a092fad48907d532fea17583fb1bf538338e4760e9"
 
 [[package]]
 name = "aiohttp"
@@ -238,6 +238,16 @@ summary = "Distribution utilities"
 files = [
     {file = "distlib-0.3.7-py2.py3-none-any.whl", hash = "sha256:2e24928bc811348f0feb63014e97aaae3037f2cf48712d51ae61df7fd6075057"},
     {file = "distlib-0.3.7.tar.gz", hash = "sha256:9dafe54b34a028eafd95039d5e5d4851a13734540f1331060d31c9916e7147a8"},
+]
+
+[[package]]
+name = "dynaconf"
+version = "3.2.4"
+requires_python = ">=3.8"
+summary = "The dynamic configurator for your Python Project"
+files = [
+    {file = "dynaconf-3.2.4-py2.py3-none-any.whl", hash = "sha256:858f9806fab2409c4f5442614c2605d4c4071d5e5153b0e7f24a225f27465aed"},
+    {file = "dynaconf-3.2.4.tar.gz", hash = "sha256:2e6adebaa587f4df9241a16a4bec3fda521154d26b15f3258fde753a592831b6"},
 ]
 
 [[package]]
