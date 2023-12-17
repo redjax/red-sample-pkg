@@ -2,21 +2,23 @@
 name: Build project with PDM
 
 on:
-  push:
-    branches:
-      - release
+  # push:
+  #   branches:
+  #     - release
   pull_request:
     branches:
       - release
 
 jobs:
   steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
+
     - name: Setup PDM
       uses: pdm-project/setup-pdm@v3
 
     - name: Install dependencies
       run: pdm install
-    
+
     - name: Build
       run: pdm build

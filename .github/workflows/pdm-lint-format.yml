@@ -2,9 +2,9 @@
 name: Run lint & format PDM Scripts
 
 on:
-  push:
-    branches:
-      - dev
+  # push:
+  #   branches:
+  #     - dev
   #     - ci
   pull_request:
     branches:
